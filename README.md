@@ -20,3 +20,8 @@ commands and options used
 6. test framework -> JUnit
 7. project name -> default
 8. source package -> in.hp.gradle
+
+##gradle-web-app
+sample java web app project created using gradle
+
+used to demonstrate web and gretty plugins
