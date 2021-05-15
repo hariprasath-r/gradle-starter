@@ -9,7 +9,6 @@ allprojects {
 
 // subprojects method of Project class is used to apply to all sub projects
 subprojects {
-
     version '1.0.0'
     group 'in.hp.gradle'
 
@@ -31,5 +30,12 @@ subprojects {
     dependencies {
         testImplementation 'junit:junit:4.13'
     }
+}
 
+// child project level dependencies can be specified in root
+project('webapp') {
+    dependencies {
+        // mentioning that webapp is dependent on services
+        implementation project(':services')
+    }
 }

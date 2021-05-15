@@ -29,6 +29,9 @@ dependencies {
     // adding servlet dependency as providedCompile as it is not needed when packaged
     providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
 
+    // adding this to verify in packaging
+    compile 'com.fasterxml.jackson.core:jackson-core:2.11.2'
+
     // Use JUnit test framework.
     testImplementation 'junit:junit:4.13'
 }
