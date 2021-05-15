@@ -14,4 +14,18 @@ subprojects {
             println project.name
         }
     }
+
+    // when using plugins inside subprojects, use apply method
+    // apply method accepts map
+    // TODO: check how to apply mutiple plugins
+    apply plugin: 'application'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'junit:junit:4.13'
+    }
+
 }
