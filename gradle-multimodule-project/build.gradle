@@ -1,0 +1,17 @@
+// allprojects method of Project class is used to apply tasks to all projects including parent and child
+allprojects {
+    task printProjectNames {
+        doLast {
+            println project.name
+        }
+    }
+}
+
+// subprojects method of Project class is used to apply to all sub projects
+subprojects {
+    task printSubProjectNames {
+        doLast {
+            println project.name
+        }
+    }
+}
