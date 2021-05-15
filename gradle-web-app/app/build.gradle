@@ -7,26 +7,20 @@
  */
 
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
-    id 'application'
+    // war is a combination of java plugin and other tasks needed to run webapp
+    id 'war'
 }
 
 repositories {
-    // Use JCenter for resolving dependencies.
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
+
+    // adding servlet dependency as providedCompile as it is not needed when packaged
+    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
+
     // Use JUnit test framework.
     testImplementation 'junit:junit:4.13'
-
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:29.0-jre'
 }
 
-/*
-application {
-    // Define the main class for the application.
-    mainClass = 'in.hp.gradle.App'
-}
-*/

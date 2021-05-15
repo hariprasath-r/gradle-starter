@@ -24,4 +24,4 @@ commands and options used
 ##gradle-web-app
 sample java web app project created using gradle
 
-used to demonstrate web and gretty plugins
+used to demonstrate war and gretty plugins
