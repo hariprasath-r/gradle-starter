@@ -9,10 +9,19 @@
 plugins {
     // war is a combination of java plugin and other tasks needed to run webapp
     id 'war'
+
+    /**
+     * to run our application using an embedded server -> appRun
+     * by default gretty uses jetty server to run
+     * we can run it with tomcat as well -> tomcatRun
+     * check gretty tasks to know more
+     */
+    id 'org.gretty' version('3.0.3')
 }
 
 repositories {
-    mavenCentral()
+    // gretty needs jcenter, as the grettyRunnerJetty configuration error is coming when using maven
+    jcenter()
 }
 
 dependencies {
@@ -24,3 +33,5 @@ dependencies {
     testImplementation 'junit:junit:4.13'
 }
 
+// specifies port to run our application, default 8080
+gretty.httpPort 8090
