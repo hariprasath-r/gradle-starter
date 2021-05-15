@@ -25,3 +25,12 @@ commands and options used
 sample java web app project created using gradle
 
 used to demonstrate war and gretty plugins
+
+## gradle-multimodule-project
+sample gradle multimodule project
+
+it has 4 modules
+1. webapp -> web layer
+2. services -> business layer
+3. data -> data layer to access database
+4. integration -> integration layer to access other services
