@@ -9,6 +9,8 @@
 plugins {
     // war is a combination of java plugin and other tasks needed to run webapp
     id 'war'
+    // applying plugin to single module - webapp
+//    id 'org.sonarqube' version '3.2.0'
 
     /**
      * to run our application using an embedded server -> appRun

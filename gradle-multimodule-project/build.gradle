@@ -1,3 +1,24 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7"
+    }
+}
+
+apply plugin: 'org.sonarqube'
+sonarqube {
+    properties {
+        property 'sonar.login', 'admin'
+        property 'sonar.password', '123456'
+//        property "sonar.projectKey", "projectKey"
+//        property "sonar.organization", "org"
+//        property "sonar.host.url", "https://sonarcloud.io"
+//        property "sonar.verbose", "true"
+    }
+}
+
 // allprojects method of Project class is used to apply tasks to all projects including parent and child
 allprojects {
     task printProjectNames {
@@ -33,7 +54,7 @@ subprojects {
     }
 
     /**
-     * by default, test and jTR tasks are independant
+     * by default, test and jTR tasks are independent
      * to make them run one after another, we are making them dependent on each other
      */
     test.finalizedBy(jacocoTestReport)
