@@ -39,3 +39,10 @@ project('webapp') {
         implementation project(':services')
     }
 }
+
+project('services') {
+    dependencies {
+        implementation project(':data')
+        implementation project(':integration')
+    }
+}
