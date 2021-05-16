@@ -20,8 +20,8 @@ subprojects {
 
     // when using plugins inside subprojects, use apply method
     // apply method accepts map
-    // TODO: check how to apply mutiple plugins
     apply plugin: 'application'
+    apply plugin: 'jacoco'
 
     repositories {
         mavenCentral()
@@ -31,6 +31,13 @@ subprojects {
         testImplementation group: 'junit', name: 'junit', version: '4.13.2'
         testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.10.0'
     }
+
+    /**
+     * by default, test and jTR tasks are independant
+     * to make them run one after another, we are making them dependent on each other
+     */
+    test.finalizedBy(jacocoTestReport)
+    jacocoTestReport.dependsOn test
 }
 
 // child project level dependencies can be specified in root

@@ -31,9 +31,6 @@ dependencies {
 
     // adding this to verify in packaging
     compile 'com.fasterxml.jackson.core:jackson-core:2.11.2'
-
-    // Use JUnit test framework.
-    testImplementation 'junit:junit:4.13'
 }
 
 // specifies port to run our application, default 8080
