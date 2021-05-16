@@ -7,6 +7,30 @@ buildscript {
     }
 }
 
+/**
+ * Created a new custom plugin
+ * We can specify Project/Task/Setting in the interface type
+ * Inside the apply method, we can specify the tasks to execute
+ */
+public class MyAWSPlugin implements Plugin<Project> {
+
+    @Override
+    void apply(Project project) {
+
+        project.task('copyToS3') {
+            doLast { println 'Copied to S3' }
+        }
+
+        project.task('deployToEC2') {
+            doLast {
+                println 'Application deployed to EC2, should be up and running in few mins...'
+            }
+        }
+
+    }
+}
+
+apply plugin: MyAWSPlugin
 apply plugin: 'org.sonarqube'
 sonarqube {
     properties {
